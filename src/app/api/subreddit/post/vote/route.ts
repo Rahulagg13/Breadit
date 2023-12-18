@@ -13,7 +13,6 @@ export async function PATCH(req: Request) {
       return new Response("UnAuthorized", { status: 401 });
     }
     const body = await req.json();
-    console.log(body);
 
     const { postId, voteType } = PostVoteValidator.parse(body);
 
