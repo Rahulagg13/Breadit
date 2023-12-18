@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playpen+Sans&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -76,6 +76,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
