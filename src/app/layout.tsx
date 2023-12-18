@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/NavBar";
+import Providers from "@/components/Providers";
 
 export const metadata = {
   title: "Breadit",
@@ -27,13 +28,15 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-screen pt-12 bg-slate-50 antialiased">
-        {/* @ts-expect-error server component */}
-        <Navbar />
+        <Providers>
+          {/* @ts-expect-error server component */}
+          <Navbar />
 
-        {authModal}
-        <div className="container max-w-7xl mx-auto h-full pt-12">
-          {children}
-        </div>
+          {authModal}
+          <div className="container max-w-7xl mx-auto h-full pt-12">
+            {children}
+          </div>
+        </Providers>
         <Toaster />
       </body>
     </html>

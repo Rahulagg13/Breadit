@@ -18,7 +18,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, token }) {
+    async session({ token, session }) {
       if (token) {
         session.user.id = token.id;
         session.user.name = token.name;
@@ -56,10 +56,10 @@ export const authOptions: NextAuthOptions = {
         username: dbUser.username,
       };
     },
-    redirect({ url, baseUrl }) {
+    redirect() {
       return "/";
     },
   },
 };
 
-export const getAuthSession = () => getServerSession();
+export const getAuthSession = () => getServerSession(authOptions);
