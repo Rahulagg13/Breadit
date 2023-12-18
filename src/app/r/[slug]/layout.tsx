@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import Link from "next/link";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
-import ToFeedButton from "@/components/TofeedButton";
+import ToFeedButton from "@/components/ToFeedButton";
 // import { useRouter } from "next/navigation";
 const Layout = async ({
   children,
