@@ -31,14 +31,13 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
     data: queryResult,
     refetch,
     isFetched,
-    isFetching,
   } = useQuery({
     queryFn: async () => {
       if (!input) return [];
       const { data } = await axios.get(`/api/search?q=${input}`);
-      return data as Subreddit & {
+      return data as (Subreddit & {
         _count: Prisma.SubredditCountOutputType;
-      };
+      })[];
     },
     queryKey: ["search-query"],
     enabled: false,
