@@ -64,7 +64,6 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
       <CommandInput
         className="outline-none border-none focus:border-none focus:outline-none"
         value={input}
-        isLoading={isFetching}
         onValueChange={(text) => {
           setInput(text);
           deBounceRequest();
